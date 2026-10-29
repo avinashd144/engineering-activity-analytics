@@ -177,4 +177,4 @@ Simulate the following week's run with `python pipeline/weekly_refresh.py --as-o
 
 ## Author
 
-Avinash Desai · [GitHub](https://github.com/avinashd144)
+Avinash Desai · [LinkedIn](https://www.linkedin.com/in/avinash-desai4/) · [GitHub](https://github.com/avinashd144)
