@@ -1,0 +1,7 @@
+FunctionID,FunctionName,FunctionCode
+F01,Structural Analysis,STR
+F02,Dynamic Systems Modelling,DSM
+F03,Thermal & Fluids (CFD),CFD
+F04,"Noise, Vibration & Harshness",NVH
+F05,Tribology,TRB
+F06,Durability Testing,DUR

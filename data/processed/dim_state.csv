@@ -1,0 +1,7 @@
+state,state_order,state_group,is_open
+Proposed,1,Pipeline,1
+Planning,2,Pipeline,1
+Active,3,In Progress,1
+Review,4,Wrap-up,1
+Report,5,Wrap-up,1
+Closed,6,Closed,0

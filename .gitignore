@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+logs/
+.env
+# Power BI temp/backup files
+*.pbix.bak
+~$*
+scratch/

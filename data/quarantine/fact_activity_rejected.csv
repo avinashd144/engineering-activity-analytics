@@ -1,0 +1,16 @@
+activity_id,project_id,activity_title,function_id,activity_engineer_id,guide_approver_id,location_id,state,created_date,start_date,deadline_date,report_date,closed_date,percent_complete,planned_hours,reject_reason
+A00713,P0125,TRB - Lubricant selection study,F05,E035,E034,L01,Closed,2025-06-19,2025-06-29,2026-01-25,2026-02-03,2025-06-22,100,264,closed before it started
+A00642,P0111,STR - FEA of main frame,F01,,E002,L02,Active,2026-07-27,2026-08-16,2027-01-28,,,23,72,mandatory field missing
+A00494,P0087,DUR - Durability test plan,F06,,E041,L02,Closed,2026-01-31,2026-03-20,2026-09-02,2026-08-01,2026-08-12,100,272,mandatory field missing
+A00604,P0105,DSM - Duty cycle simulation,F02,,E012,L03,Closed,2024-12-10,2025-01-13,2025-08-24,2025-04-14,2025-05-08,100,176,mandatory field missing
+A00596,P0104,CFD - Tank sloshing study,F03,E025,E022,L01,In progress,2025-10-10,2025-12-01,2026-05-20,2026-06-18,2026-07-12,100,264,state not in allowed list
+A00579,P0101,DUR - Durability test plan,F06,E043,E039,L01,Closed,2025-12-09,2026-01-13,2026-08-11,2026-04-14,,100,120,Closed but no closed_date
+A00435,P0078,STR - FEA of main frame,F01,E999,E003,L01,Report,2026-02-13,2026-03-12,2026-10-22,2026-09-27,,92,248,activity engineer not found
+A00005,P0002,NVH - Cab noise survey,F04,E031,E029,L01,Closed,2024-09-19,2024-09-29,2025-05-02,2025-03-21,2024-09-22,100,72,closed before it started
+A00495,P0087,DSM - Hydraulic circuit model,F02,E013,E012,L01,Closed,2026-03-01,2026-03-11,2026-10-27,2026-08-10,2026-03-04,100,112,closed before it started
+A00528,P0092,CFD - Tank sloshing study,F03,E999,E020,L03,Proposed,2026-09-15,,2027-05-02,,,0,288,activity engineer not found
+A00033,P0007,NVH - Exterior noise prediction,F04,,E029,L01,Closed,2026-01-27,2026-03-17,2026-09-17,2026-08-08,2026-08-18,100,272,mandatory field missing
+A00581,P0101,DUR - Rig test execution,F06,E039,E041,L02,Actve,2026-01-12,2026-02-05,2026-08-03,2026-07-07,2026-07-18,100,224,state not in allowed list
+A00472,P0083,DUR - Component life prediction,F06,E999,E040,L01,Closed,2025-12-15,2026-01-11,2026-06-18,2026-04-11,2026-04-24,100,96,activity engineer not found
+A00456,P0080,NVH - Vibration isolation design,F04,,E028,L01,Closed,2025-07-28,2025-09-18,2026-03-07,2026-02-21,2026-03-10,100,168,mandatory field missing
+A00057,P0012,DUR - Field data correlation,F06,E046,E040,L01,Closed,2026-07-07,2026-08-21,2027-01-14,,,21,216,Closed but no closed_date

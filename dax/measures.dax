@@ -1,0 +1,294 @@
+// =============================================================================
+// measures.dax  —  Engineering Activity Analytics
+// Create a blank table called _Measures (Home > Enter data > Load) and add each
+// measure below to it. Display folders are noted in the section headers.
+//
+// Table names used (rename the queries to these on import — see docs/powerbi_build_guide.md):
+//   fact_activity          <- dbo.vw_fact_activity          (grain: one activity)
+//   fact_activity_monthly  <- dbo.vw_fact_activity_monthly  (grain: activity x month-end)
+//   fact_timesheet         <- dbo.vw_fact_timesheet         (grain: engineer x activity x week)
+//   fact_escalation        <- dbo.vw_fact_escalation        (grain: one escalation)
+//   dim_engineer           <- dbo.vw_dim_engineer
+//   dim_date, dim_state, dim_function, dim_unit, dim_platform, dim_project, dim_location
+//   refresh_log            <- dbo.etl_refresh_log
+//   dq_latest              <- dbo.vw_dq_latest
+//
+// Relationships that matter for the DAX:
+//   dim_date[date] -> fact_activity[created_date]        ACTIVE
+//   dim_date[date] -> fact_activity[closed_date]         inactive (USERELATIONSHIP)
+//   dim_engineer[engineer_id] -> fact_activity[activity_engineer_id]  ACTIVE
+//   dim_engineer[engineer_id] -> fact_activity[guide_approver_id]     inactive (USERELATIONSHIP)
+// =============================================================================
+
+
+// ---------------------------------------------------------------- 0. Refresh
+// Folder: 0 Refresh
+
+As Of Date =
+MAX ( refresh_log[as_of_date] )
+
+// The measure is stored in a variable first: a measure cannot be used directly
+// inside a CALCULATE boolean filter.
+Data As Of Label =
+VAR AsOf = [As Of Date]
+VAR Status = CALCULATE ( MAX ( refresh_log[dq_status] ), refresh_log[as_of_date] = AsOf )
+RETURN
+    "Data as of " & FORMAT ( AsOf, "d mmm yyyy" ) & "  |  DQ status: " & Status
+
+
+// ---------------------------------------------------------------- 1. Activity load (current)
+// Folder: 1 Activity Load
+// Base measure. DISTINCTCOUNT, not COUNTROWS: the activity is the grain, and a distinct
+// count stays correct even if a future join duplicates rows.
+
+Activities =
+DISTINCTCOUNT ( fact_activity[activity_id] )
+
+Open Activities =
+CALCULATE ( [Activities], dim_state[is_open] = TRUE () )
+
+In-Flight Activities =
+CALCULATE ( [Activities], fact_activity[is_in_flight] = TRUE () )
+
+Proposed Activities =
+CALCULATE ( [Activities], dim_state[state] = "Proposed" )
+
+Planning Activities =
+CALCULATE ( [Activities], dim_state[state] = "Planning" )
+
+Active Activities =
+CALCULATE ( [Activities], dim_state[state] = "Active" )
+
+Review Activities =
+CALCULATE ( [Activities], dim_state[state] = "Review" )
+
+Report Activities =
+CALCULATE ( [Activities], dim_state[state] = "Report" )
+
+Overdue Activities =
+CALCULATE ( [Activities], fact_activity[is_overdue] = TRUE () )
+
+Overdue % of Open =
+DIVIDE ( [Overdue Activities], [Open Activities] )
+
+Projects with Open Activities =
+CALCULATE ( DISTINCTCOUNT ( fact_activity[project_id] ), dim_state[is_open] = TRUE () )
+
+Avg Days Overdue =
+CALCULATE ( AVERAGE ( fact_activity[days_overdue] ), fact_activity[is_overdue] = TRUE () )
+
+// Share of the visible total, e.g. one state's share of all open activities.
+// ALLSELECTED keeps slicer selections but removes the visual's own row grouping.
+% of Open Activities =
+DIVIDE ( [Open Activities], CALCULATE ( [Open Activities], ALLSELECTED ( dim_state ) ) )
+
+
+// ---------------------------------------------------------------- 2. Status trend (month-end snapshot)
+// Folder: 2 Status Trend
+// Snapshot pattern: count activities at the LAST month-end in the current filter context,
+// so a card or a yearly total shows a point-in-time value instead of adding months together.
+
+Activities at Month End =
+VAR LastSnapshot =
+    CALCULATE ( MAX ( fact_activity_monthly[month_end_date] ) )
+RETURN
+    CALCULATE (
+        DISTINCTCOUNT ( fact_activity_monthly[activity_id] ),
+        fact_activity_monthly[month_end_date] = LastSnapshot
+    )
+
+Open at Month End =
+CALCULATE ( [Activities at Month End], dim_state[is_open] = TRUE () )
+
+Active at Month End =
+CALCULATE ( [Activities at Month End], dim_state[state] = "Active" )
+
+Active at Month End (Prev Month) =
+CALCULATE ( [Active at Month End], DATEADD ( dim_date[date], -1, MONTH ) )
+
+Active Change vs Prev Month =
+VAR Curr = [Active at Month End]
+VAR Prev = [Active at Month End (Prev Month)]
+RETURN
+    IF ( NOT ISBLANK ( Prev ), Curr - Prev )
+
+Overdue at Month End =
+CALCULATE ( [Activities at Month End], fact_activity_monthly[is_overdue_at_month_end] = TRUE () )
+
+
+// ---------------------------------------------------------------- 3. Closed / throughput
+// Folder: 3 Closed
+// The model's active date relationship is on created_date. Closures must be dated by
+// closed_date, so these measures switch to the inactive relationship.
+
+Closed Activities =
+CALCULATE (
+    [Activities],
+    dim_state[state] = "Closed",
+    USERELATIONSHIP ( dim_date[date], fact_activity[closed_date] )
+)
+
+Closed Activities FYTD =
+CALCULATE ( [Closed Activities], DATESYTD ( dim_date[date], "3/31" ) )   // fiscal year ends 31 March
+
+Closed Activities (Prev Month) =
+CALCULATE ( [Closed Activities], DATEADD ( dim_date[date], -1, MONTH ) )
+
+Closed MoM % =
+DIVIDE ( [Closed Activities] - [Closed Activities (Prev Month)], [Closed Activities (Prev Month)] )
+
+Closed Activities 3M Avg =
+VAR Anchor = MIN ( MAX ( dim_date[date] ), [As Of Date] )
+RETURN
+    DIVIDE (
+        CALCULATE ( [Closed Activities], DATESINPERIOD ( dim_date[date], Anchor, -3, MONTH ) ),
+        3
+    )
+
+Avg Cycle Time (days) =
+CALCULATE (
+    AVERAGE ( fact_activity[cycle_time_days] ),
+    dim_state[state] = "Closed",
+    USERELATIONSHIP ( dim_date[date], fact_activity[closed_date] )
+)
+
+On-Time Closure % =
+VAR ClosedOnTime =
+    CALCULATE (
+        [Activities],
+        dim_state[state] = "Closed",
+        // filter on the two columns only, so the closed_date relationship still drives the dates
+        FILTER (
+            ALL ( fact_activity[closed_date], fact_activity[deadline_date] ),
+            fact_activity[closed_date] <= fact_activity[deadline_date]
+        ),
+        USERELATIONSHIP ( dim_date[date], fact_activity[closed_date] )
+    )
+RETURN
+    DIVIDE ( ClosedOnTime, [Closed Activities] )
+
+
+// ---------------------------------------------------------------- 4. Engineer load
+// Folder: 4 Engineer Load
+// Load = in-flight activities (Active, Review, Report) assigned to the activity engineer.
+// Guide/approver work is reported separately and does NOT count towards load.
+
+Engineer Load =
+[In-Flight Activities]
+
+Engineer Capacity =
+SUM ( dim_engineer[capacity_activities] )
+
+Load Ratio =
+DIVIDE ( [Engineer Load], [Engineer Capacity] )
+
+Load Band =
+VAR r = [Load Ratio]
+RETURN
+    SWITCH (
+        TRUE (),
+        ISBLANK ( [Engineer Capacity] ), BLANK (),
+        r > 1, "Overloaded",
+        r < 0.5, "Under-utilised",
+        "Balanced"
+    )
+
+// Engineers whose load is above capacity, counted engineer by engineer
+// (a function-level ratio could hide one overloaded person behind several idle ones).
+Overloaded Engineers =
+COUNTROWS (
+    FILTER ( VALUES ( dim_engineer[engineer_id] ), [Load Ratio] > 1 )
+)
+
+Under-utilised Engineers =
+COUNTROWS (
+    FILTER ( VALUES ( dim_engineer[engineer_id] ), COALESCE ( [Load Ratio], 0 ) < 0.5 )
+)
+
+// Average load of all engineers in the selected engineer's home function.
+// "+ 0" makes engineers with no in-flight work count as zero instead of being skipped.
+Function Avg Load =
+VAR Fn = SELECTEDVALUE ( dim_engineer[home_function_name] )
+RETURN
+    IF (
+        NOT ISBLANK ( Fn ),
+        CALCULATE (
+            AVERAGEX ( VALUES ( dim_engineer[engineer_id] ), [Engineer Load] + 0 ),
+            ALL ( dim_engineer ),
+            dim_engineer[home_function_name] = Fn
+        )
+    )
+
+Load vs Function Avg =
+[Engineer Load] - [Function Avg Load]
+
+// Same activities, counted through the guide/approver relationship instead.
+Activities as Guide =
+CALCULATE (
+    [In-Flight Activities],
+    USERELATIONSHIP ( dim_engineer[engineer_id], fact_activity[guide_approver_id] )
+)
+
+Hours Logged =
+SUM ( fact_timesheet[hours] )
+
+Hours Logged (Last 4 Weeks) =
+VAR AsOf = [As Of Date]
+RETURN
+    CALCULATE ( [Hours Logged], DATESINPERIOD ( dim_date[date], AsOf, -28, DAY ) )
+
+// 40 h/week per engineer in context
+Utilisation (Last 4 Weeks) =
+DIVIDE (
+    [Hours Logged (Last 4 Weeks)],
+    4 * 40 * DISTINCTCOUNT ( dim_engineer[engineer_id] )
+)
+
+// Dynamic title for the drill-down table under the engineer chart
+Engineer Detail Title =
+"Activities making up the load of "
+    & SELECTEDVALUE ( dim_engineer[engineer_name], "all selected engineers" )
+
+
+// ---------------------------------------------------------------- 5. Escalations
+// Folder: 5 Escalations
+// A rate is reported next to the count: if the portfolio grows, raw escalations rise even
+// when nothing got worse. Use the rate when comparing periods.
+
+Escalations =
+COUNTROWS ( fact_escalation )
+
+Escalations (Prev Month) =
+CALCULATE ( [Escalations], DATEADD ( dim_date[date], -1, MONTH ) )
+
+Escalations MoM % =
+DIVIDE ( [Escalations] - [Escalations (Prev Month)], [Escalations (Prev Month)] )
+
+Escalations Rolling 3M =
+VAR Anchor = MIN ( MAX ( dim_date[date] ), [As Of Date] )
+RETURN
+    CALCULATE ( [Escalations], DATESINPERIOD ( dim_date[date], Anchor, -3, MONTH ) )
+
+In-Flight at Month End =
+CALCULATE ( [Activities at Month End], dim_state[state] IN { "Active", "Review", "Report" } )
+
+Escalations per 100 In-Flight =
+DIVIDE ( [Escalations], [In-Flight at Month End] ) * 100
+
+Escalated Activities =
+DISTINCTCOUNT ( fact_escalation[activity_id] )
+
+
+// ---------------------------------------------------------------- 6. Data quality
+// Folder: 6 Data Quality
+
+DQ Checks Run =
+COUNTROWS ( dq_latest )
+
+DQ Checks Failed =
+CALCULATE ( COUNTROWS ( dq_latest ), dq_latest[status] = "ERROR" )
+
+Rows Quarantined =
+VAR AsOf = [As Of Date]
+RETURN
+    CALCULATE ( MAX ( refresh_log[rows_quarantined] ), refresh_log[as_of_date] = AsOf )

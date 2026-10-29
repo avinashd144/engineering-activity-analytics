@@ -1,0 +1,10 @@
+timesheet_id,week_start,engineer_id,activity_id,hours,reject_reason
+T002282,2025-08-18,E014,A00103,99.0,more than 60 hours in one week
+T003030,2025-09-01,E013,A00142,-15.0,hours <= 0 or not a number
+T003065,2026-09-28,E046,A00151,99.0,more than 60 hours in one week
+T003687,2026-01-26,E013,A00184,-4.0,hours <= 0 or not a number
+T004314,2026-05-18,E008,A00212,99.0,more than 60 hours in one week
+T009509,2025-05-12,E028,A00471,-18.0,hours <= 0 or not a number
+T010868,2025-08-25,E035,A00545,-7.0,hours <= 0 or not a number
+T011858,2026-07-27,E039,A99999,7.5,activity not found
+T013980,2025-05-26,E016,A99999,5.0,activity not found

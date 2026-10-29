@@ -1,0 +1,294 @@
+escalation_id,activity_id,escalation_date,reason,raised_by
+ESC00001,A00005,2024-11-11,Scope change,Platform Lead
+ESC00002,A00008,2025-03-06,Scope change,Platform Lead
+ESC00003,A00008,2025-02-07,Resource conflict,Program Manager
+ESC00004,A00010,2025-07-17,Deadline at risk,Engineering Supervisor
+ESC00005,A00010,2025-04-18,Scope change,Platform Lead
+ESC00006,A00010,2025-09-02,Deadline at risk,Engineering Supervisor
+ESC00007,A00020,2025-12-10,Deadline at risk,Platform Lead
+ESC00008,A00020,2025-06-29,Blocked dependency,Platform Lead
+ESC00009,A00021,2025-08-20,Status unclear,Engineering Supervisor
+ESC00010,A00023,2025-02-11,Resource conflict,Program Manager
+ESC00011,A00026,2025-03-26,Deadline at risk,Engineering Supervisor
+ESC00012,A00026,2025-01-31,Blocked dependency,Program Manager
+ESC00013,A00026,2024-10-01,Blocked dependency,Engineering Supervisor
+ESC00014,A00037,2026-06-05,Status unclear,Program Manager
+ESC00015,A00041,2025-08-31,Status unclear,Program Manager
+ESC00016,A00043,2026-01-26,Deadline at risk,Engineering Supervisor
+ESC00017,A00043,2026-03-04,Deadline at risk,Platform Lead
+ESC00018,A00050,2025-08-13,Deadline at risk,Program Manager
+ESC00019,A00050,2024-12-26,Scope change,Engineering Supervisor
+ESC00020,A00052,2026-01-14,Status unclear,Platform Lead
+ESC00021,A00052,2026-01-14,Blocked dependency,Program Manager
+ESC00022,A00053,2025-12-16,Status unclear,Platform Lead
+ESC00023,A00054,2025-12-15,Blocked dependency,Engineering Supervisor
+ESC00024,A00061,2026-02-10,Deadline at risk,Platform Lead
+ESC00025,A00066,2025-05-05,Status unclear,Program Manager
+ESC00026,A00068,2025-03-17,Scope change,Program Manager
+ESC00027,A00068,2025-03-26,Blocked dependency,Engineering Supervisor
+ESC00028,A00072,2025-12-16,Resource conflict,Engineering Supervisor
+ESC00029,A00074,2026-04-30,Deadline at risk,Program Manager
+ESC00030,A00074,2026-01-16,Resource conflict,Engineering Supervisor
+ESC00031,A00074,2025-11-12,Resource conflict,Engineering Supervisor
+ESC00032,A00075,2025-12-28,Scope change,Engineering Supervisor
+ESC00033,A00076,2026-04-09,Deadline at risk,Program Manager
+ESC00034,A00078,2026-01-21,Blocked dependency,Platform Lead
+ESC00035,A00080,2025-12-12,Resource conflict,Engineering Supervisor
+ESC00036,A00080,2026-04-28,Deadline at risk,Engineering Supervisor
+ESC00037,A00086,2025-04-13,Resource conflict,Program Manager
+ESC00038,A00090,2025-04-18,Status unclear,Program Manager
+ESC00039,A00091,2025-09-29,Deadline at risk,Platform Lead
+ESC00040,A00091,2025-08-05,Resource conflict,Engineering Supervisor
+ESC00041,A00100,2025-08-22,Blocked dependency,Program Manager
+ESC00042,A00100,2026-02-01,Deadline at risk,Engineering Supervisor
+ESC00043,A00103,2026-02-05,Deadline at risk,Program Manager
+ESC00044,A00103,2025-12-29,Deadline at risk,Platform Lead
+ESC00045,A00103,2025-09-24,Status unclear,Program Manager
+ESC00046,A00106,2025-03-06,Blocked dependency,Program Manager
+ESC00047,A00111,2025-11-14,Status unclear,Engineering Supervisor
+ESC00048,A00112,2026-01-24,Scope change,Program Manager
+ESC00049,A00113,2025-12-03,Status unclear,Platform Lead
+ESC00050,A00118,2026-06-12,Resource conflict,Platform Lead
+ESC00051,A00122,2026-07-29,Status unclear,Engineering Supervisor
+ESC00052,A00123,2026-06-26,Scope change,Engineering Supervisor
+ESC00053,A00124,2026-08-31,Blocked dependency,Engineering Supervisor
+ESC00054,A00125,2025-12-07,Resource conflict,Platform Lead
+ESC00055,A00125,2026-03-10,Blocked dependency,Platform Lead
+ESC00056,A00128,2026-01-03,Status unclear,Platform Lead
+ESC00057,A00130,2026-01-10,Blocked dependency,Engineering Supervisor
+ESC00058,A00136,2026-09-17,Status unclear,Engineering Supervisor
+ESC00059,A00140,2025-05-29,Blocked dependency,Platform Lead
+ESC00060,A00140,2025-11-09,Blocked dependency,Platform Lead
+ESC00061,A00140,2025-09-30,Scope change,Platform Lead
+ESC00062,A00141,2025-10-17,Scope change,Program Manager
+ESC00063,A00149,2026-08-20,Scope change,Program Manager
+ESC00064,A00149,2026-09-04,Scope change,Engineering Supervisor
+ESC00065,A00154,2026-09-17,Resource conflict,Platform Lead
+ESC00066,A00157,2026-03-11,Resource conflict,Engineering Supervisor
+ESC00067,A00158,2026-08-11,Deadline at risk,Platform Lead
+ESC00068,A00162,2026-04-17,Deadline at risk,Platform Lead
+ESC00069,A00188,2025-05-04,Scope change,Program Manager
+ESC00070,A00189,2026-01-18,Deadline at risk,Program Manager
+ESC00071,A00191,2025-06-15,Status unclear,Engineering Supervisor
+ESC00072,A00195,2025-12-11,Status unclear,Engineering Supervisor
+ESC00073,A00198,2026-01-03,Scope change,Platform Lead
+ESC00074,A00201,2025-12-12,Status unclear,Program Manager
+ESC00075,A00209,2025-12-12,Status unclear,Platform Lead
+ESC00076,A00209,2026-03-21,Resource conflict,Engineering Supervisor
+ESC00077,A00209,2026-02-13,Blocked dependency,Platform Lead
+ESC00078,A00212,2026-04-05,Deadline at risk,Engineering Supervisor
+ESC00079,A00212,2025-12-28,Scope change,Program Manager
+ESC00080,A00215,2026-06-18,Resource conflict,Platform Lead
+ESC00081,A00220,2026-04-12,Status unclear,Engineering Supervisor
+ESC00082,A00220,2026-05-30,Resource conflict,Platform Lead
+ESC00083,A00221,2025-01-10,Scope change,Platform Lead
+ESC00084,A00222,2024-12-25,Resource conflict,Platform Lead
+ESC00085,A00222,2025-03-02,Resource conflict,Engineering Supervisor
+ESC00086,A00222,2025-06-25,Deadline at risk,Engineering Supervisor
+ESC00087,A00224,2026-04-02,Status unclear,Program Manager
+ESC00088,A00226,2025-12-22,Resource conflict,Platform Lead
+ESC00089,A00227,2025-11-18,Scope change,Program Manager
+ESC00090,A00229,2025-10-24,Blocked dependency,Platform Lead
+ESC00091,A00229,2026-01-05,Status unclear,Platform Lead
+ESC00092,A00232,2026-01-13,Status unclear,Engineering Supervisor
+ESC00093,A00234,2026-02-07,Scope change,Engineering Supervisor
+ESC00094,A00235,2026-07-25,Deadline at risk,Platform Lead
+ESC00095,A00236,2026-04-15,Status unclear,Program Manager
+ESC00096,A00237,2026-03-10,Status unclear,Program Manager
+ESC00097,A00237,2026-08-13,Deadline at risk,Platform Lead
+ESC00098,A00239,2026-03-06,Blocked dependency,Platform Lead
+ESC00099,A00240,2026-03-03,Scope change,Platform Lead
+ESC00100,A00245,2026-08-19,Blocked dependency,Engineering Supervisor
+ESC00101,A00249,2025-11-09,Blocked dependency,Engineering Supervisor
+ESC00102,A00249,2025-12-27,Scope change,Engineering Supervisor
+ESC00103,A00249,2026-01-11,Resource conflict,Engineering Supervisor
+ESC00104,A00253,2026-03-23,Deadline at risk,Engineering Supervisor
+ESC00105,A00259,2026-08-03,Status unclear,Engineering Supervisor
+ESC00106,A00261,2026-08-03,Status unclear,Engineering Supervisor
+ESC00107,A00269,2026-07-16,Blocked dependency,Platform Lead
+ESC00108,A00277,2025-06-14,Blocked dependency,Platform Lead
+ESC00109,A00280,2025-07-27,Blocked dependency,Engineering Supervisor
+ESC00110,A00280,2025-09-02,Resource conflict,Engineering Supervisor
+ESC00111,A00288,2026-06-20,Status unclear,Program Manager
+ESC00112,A00291,2026-02-26,Resource conflict,Program Manager
+ESC00113,A00292,2026-05-24,Blocked dependency,Program Manager
+ESC00114,A00306,2026-06-06,Scope change,Platform Lead
+ESC00115,A00306,2026-06-23,Resource conflict,Program Manager
+ESC00116,A00312,2026-03-04,Status unclear,Engineering Supervisor
+ESC00117,A00313,2026-03-26,Deadline at risk,Engineering Supervisor
+ESC00118,A00319,2026-03-20,Blocked dependency,Program Manager
+ESC00119,A00329,2025-11-30,Scope change,Engineering Supervisor
+ESC00120,A00331,2026-08-06,Deadline at risk,Program Manager
+ESC00121,A00333,2024-12-15,Scope change,Program Manager
+ESC00122,A00335,2025-04-03,Scope change,Program Manager
+ESC00123,A00335,2024-12-17,Status unclear,Engineering Supervisor
+ESC00124,A00350,2025-10-03,Scope change,Program Manager
+ESC00125,A00353,2026-04-21,Deadline at risk,Program Manager
+ESC00126,A00354,2025-10-31,Blocked dependency,Program Manager
+ESC00127,A00354,2026-02-27,Status unclear,Program Manager
+ESC00128,A00355,2025-10-25,Resource conflict,Program Manager
+ESC00129,A00358,2025-09-20,Resource conflict,Engineering Supervisor
+ESC00130,A00359,2025-12-12,Status unclear,Platform Lead
+ESC00131,A00361,2025-11-18,Status unclear,Platform Lead
+ESC00132,A00361,2026-01-10,Scope change,Platform Lead
+ESC00133,A00361,2026-01-16,Blocked dependency,Program Manager
+ESC00134,A00362,2025-12-12,Resource conflict,Platform Lead
+ESC00135,A00364,2026-05-18,Deadline at risk,Platform Lead
+ESC00136,A00370,2026-01-19,Scope change,Engineering Supervisor
+ESC00137,A00376,2026-07-13,Deadline at risk,Platform Lead
+ESC00138,A00377,2026-02-09,Blocked dependency,Platform Lead
+ESC00139,A00382,2026-05-24,Status unclear,Program Manager
+ESC00140,A00384,2025-02-02,Scope change,Platform Lead
+ESC00141,A00392,2026-03-05,Resource conflict,Engineering Supervisor
+ESC00142,A00392,2026-06-22,Deadline at risk,Program Manager
+ESC00143,A00394,2026-01-10,Blocked dependency,Platform Lead
+ESC00144,A00394,2025-11-23,Scope change,Engineering Supervisor
+ESC00145,A00398,2025-04-22,Status unclear,Program Manager
+ESC00146,A00398,2025-05-30,Blocked dependency,Program Manager
+ESC00147,A00399,2025-06-14,Status unclear,Program Manager
+ESC00148,A00399,2025-07-17,Blocked dependency,Program Manager
+ESC00149,A00407,2026-09-27,Resource conflict,Program Manager
+ESC00150,A00408,2026-09-26,Status unclear,Engineering Supervisor
+ESC00151,A00412,2025-05-05,Deadline at risk,Engineering Supervisor
+ESC00152,A00416,2025-05-30,Deadline at risk,Platform Lead
+ESC00153,A00416,2025-07-05,Deadline at risk,Engineering Supervisor
+ESC00154,A00417,2024-10-28,Status unclear,Program Manager
+ESC00155,A00418,2026-01-09,Resource conflict,Program Manager
+ESC00156,A00426,2026-09-24,Resource conflict,Platform Lead
+ESC00157,A00429,2026-09-18,Status unclear,Program Manager
+ESC00158,A00436,2026-02-22,Scope change,Program Manager
+ESC00159,A00437,2026-06-30,Scope change,Platform Lead
+ESC00160,A00437,2026-02-16,Scope change,Platform Lead
+ESC00161,A00439,2026-07-17,Scope change,Platform Lead
+ESC00162,A00440,2026-08-25,Deadline at risk,Platform Lead
+ESC00163,A00443,2026-02-07,Resource conflict,Engineering Supervisor
+ESC00164,A00447,2026-03-09,Deadline at risk,Platform Lead
+ESC00165,A00452,2026-05-30,Deadline at risk,Platform Lead
+ESC00166,A00452,2025-09-17,Scope change,Platform Lead
+ESC00167,A00452,2026-04-01,Deadline at risk,Program Manager
+ESC00168,A00454,2025-09-28,Scope change,Platform Lead
+ESC00169,A00457,2026-01-19,Status unclear,Program Manager
+ESC00170,A00460,2026-02-07,Status unclear,Platform Lead
+ESC00171,A00462,2026-02-26,Blocked dependency,Platform Lead
+ESC00172,A00469,2025-02-26,Scope change,Program Manager
+ESC00173,A00473,2026-08-31,Deadline at risk,Platform Lead
+ESC00174,A00482,2026-08-29,Status unclear,Platform Lead
+ESC00175,A00486,2026-04-06,Scope change,Platform Lead
+ESC00176,A00490,2025-06-27,Resource conflict,Engineering Supervisor
+ESC00177,A00490,2024-12-17,Resource conflict,Program Manager
+ESC00178,A00492,2026-04-05,Status unclear,Engineering Supervisor
+ESC00179,A00500,2025-08-03,Blocked dependency,Program Manager
+ESC00180,A00501,2025-05-17,Resource conflict,Engineering Supervisor
+ESC00181,A00509,2026-05-31,Resource conflict,Platform Lead
+ESC00182,A00513,2026-08-03,Scope change,Engineering Supervisor
+ESC00183,A00518,2025-08-28,Scope change,Engineering Supervisor
+ESC00184,A00522,2026-09-25,Status unclear,Program Manager
+ESC00185,A00526,2026-09-28,Resource conflict,Platform Lead
+ESC00186,A00527,2026-09-22,Resource conflict,Engineering Supervisor
+ESC00187,A00528,2026-09-15,Scope change,Platform Lead
+ESC00188,A00532,2026-07-29,Blocked dependency,Program Manager
+ESC00189,A00532,2026-07-11,Status unclear,Engineering Supervisor
+ESC00190,A00534,2026-07-24,Scope change,Program Manager
+ESC00191,A00535,2026-07-17,Blocked dependency,Program Manager
+ESC00192,A00539,2026-03-10,Resource conflict,Engineering Supervisor
+ESC00193,A00542,2026-09-02,Deadline at risk,Engineering Supervisor
+ESC00194,A00543,2025-10-05,Resource conflict,Platform Lead
+ESC00195,A00571,2026-08-27,Blocked dependency,Engineering Supervisor
+ESC00196,A00574,2025-04-10,Blocked dependency,Platform Lead
+ESC00197,A00575,2025-01-11,Status unclear,Platform Lead
+ESC00198,A00575,2025-07-14,Deadline at risk,Engineering Supervisor
+ESC00199,A00576,2025-10-09,Deadline at risk,Platform Lead
+ESC00200,A00584,2026-09-28,Status unclear,Program Manager
+ESC00201,A00589,2025-09-27,Scope change,Platform Lead
+ESC00202,A00591,2026-02-15,Status unclear,Program Manager
+ESC00203,A00591,2025-11-24,Status unclear,Platform Lead
+ESC00204,A00593,2026-06-02,Deadline at risk,Program Manager
+ESC00205,A00594,2025-11-14,Resource conflict,Program Manager
+ESC00206,A00596,2026-02-19,Blocked dependency,Engineering Supervisor
+ESC00207,A00596,2025-10-28,Resource conflict,Platform Lead
+ESC00208,A00597,2025-12-20,Blocked dependency,Engineering Supervisor
+ESC00209,A00599,2026-07-26,Deadline at risk,Platform Lead
+ESC00210,A00600,2025-12-19,Resource conflict,Platform Lead
+ESC00211,A00601,2025-05-27,Resource conflict,Platform Lead
+ESC00212,A00602,2025-02-18,Status unclear,Platform Lead
+ESC00213,A00602,2025-07-30,Blocked dependency,Platform Lead
+ESC00214,A00605,2026-02-03,Blocked dependency,Engineering Supervisor
+ESC00215,A00607,2026-02-26,Status unclear,Program Manager
+ESC00216,A00608,2026-06-18,Blocked dependency,Engineering Supervisor
+ESC00217,A00616,2026-03-11,Deadline at risk,Program Manager
+ESC00218,A00618,2025-08-20,Resource conflict,Engineering Supervisor
+ESC00219,A00621,2026-01-21,Blocked dependency,Engineering Supervisor
+ESC00220,A00621,2025-09-19,Status unclear,Platform Lead
+ESC00221,A00621,2025-10-05,Resource conflict,Program Manager
+ESC00222,A00623,2026-04-09,Deadline at risk,Engineering Supervisor
+ESC00223,A00625,2026-02-10,Blocked dependency,Platform Lead
+ESC00224,A00627,2026-07-01,Deadline at risk,Platform Lead
+ESC00225,A00634,2025-10-12,Scope change,Program Manager
+ESC00226,A00634,2025-08-29,Resource conflict,Platform Lead
+ESC00227,A00644,2026-04-17,Scope change,Platform Lead
+ESC00228,A00647,2025-11-18,Resource conflict,Platform Lead
+ESC00229,A00649,2025-02-01,Status unclear,Engineering Supervisor
+ESC00230,A00655,2025-05-22,Resource conflict,Program Manager
+ESC00231,A00661,2025-05-17,Scope change,Engineering Supervisor
+ESC00232,A00665,2026-03-16,Blocked dependency,Engineering Supervisor
+ESC00233,A00666,2026-03-12,Resource conflict,Program Manager
+ESC00234,A00680,2025-03-29,Scope change,Platform Lead
+ESC00235,A00683,2025-10-07,Resource conflict,Platform Lead
+ESC00236,A00686,2026-02-09,Blocked dependency,Engineering Supervisor
+ESC00237,A00688,2026-02-03,Blocked dependency,Engineering Supervisor
+ESC00238,A00688,2025-12-12,Resource conflict,Engineering Supervisor
+ESC00239,A00689,2026-01-27,Deadline at risk,Program Manager
+ESC00240,A00693,2025-02-24,Scope change,Program Manager
+ESC00241,A00696,2024-09-28,Blocked dependency,Platform Lead
+ESC00242,A00697,2024-09-04,Blocked dependency,Engineering Supervisor
+ESC00243,A00698,2025-06-28,Blocked dependency,Platform Lead
+ESC00244,A00700,2025-04-15,Status unclear,Program Manager
+ESC00245,A00701,2025-06-01,Scope change,Program Manager
+ESC00246,A00704,2025-02-11,Blocked dependency,Platform Lead
+ESC00247,A00708,2026-01-13,Deadline at risk,Program Manager
+ESC00248,A00708,2025-10-22,Scope change,Platform Lead
+ESC00249,A00708,2025-12-11,Deadline at risk,Engineering Supervisor
+ESC00250,A00709,2025-11-09,Blocked dependency,Engineering Supervisor
+ESC00251,A00709,2025-10-01,Status unclear,Program Manager
+ESC00252,A00711,2026-01-04,Scope change,Program Manager
+ESC00253,A00711,2025-08-22,Resource conflict,Platform Lead
+ESC00254,A00713,2025-10-03,Status unclear,Engineering Supervisor
+ESC00255,A00716,2026-03-04,Scope change,Platform Lead
+ESC00256,A00717,2026-03-08,Resource conflict,Platform Lead
+ESC00257,A00718,2026-04-18,Resource conflict,Engineering Supervisor
+ESC00258,A00721,2024-10-20,Blocked dependency,Program Manager
+ESC00259,A00725,2024-12-25,Resource conflict,Platform Lead
+ESC00260,A00725,2025-05-24,Deadline at risk,Engineering Supervisor
+ESC00261,A00725,2024-11-11,Blocked dependency,Engineering Supervisor
+ESC00262,A00725,2025-05-04,Deadline at risk,Program Manager
+ESC00263,A00726,2025-01-12,Deadline at risk,Platform Lead
+ESC00264,A00727,2025-04-09,Deadline at risk,Engineering Supervisor
+ESC00265,A00728,2026-03-05,Scope change,Engineering Supervisor
+ESC00266,A00728,2026-06-14,Deadline at risk,Program Manager
+ESC00267,A00728,2026-04-03,Scope change,Engineering Supervisor
+ESC00268,A00729,2025-10-07,Scope change,Program Manager
+ESC00269,A00733,2025-05-02,Status unclear,Program Manager
+ESC00270,A00733,2024-11-19,Blocked dependency,Engineering Supervisor
+ESC00271,A00735,2024-12-24,Resource conflict,Engineering Supervisor
+ESC00272,A00739,2026-09-20,Scope change,Platform Lead
+ESC00273,A00745,2026-02-18,Blocked dependency,Platform Lead
+ESC00274,A00745,2026-02-22,Scope change,Program Manager
+ESC00275,A00746,2026-03-07,Scope change,Platform Lead
+ESC00276,A00752,2026-04-24,Resource conflict,Engineering Supervisor
+ESC00277,A00756,2026-09-20,Status unclear,Engineering Supervisor
+ESC00278,A00761,2026-06-02,Deadline at risk,Engineering Supervisor
+ESC00279,A00761,2026-02-24,Deadline at risk,Platform Lead
+ESC00280,A00764,2026-04-30,Scope change,Program Manager
+ESC00281,A00765,2026-04-25,Deadline at risk,Engineering Supervisor
+ESC00282,A00769,2025-03-09,Status unclear,Platform Lead
+ESC00283,A00770,2025-09-22,Deadline at risk,Platform Lead
+ESC00284,A00773,2025-09-15,Deadline at risk,Program Manager
+ESC00285,A00773,2025-02-11,Scope change,Platform Lead
+ESC00286,A00775,2025-10-05,Deadline at risk,Program Manager
+ESC00287,A00780,2025-11-01,Scope change,Engineering Supervisor
+ESC00288,A00781,2025-12-12,Blocked dependency,Engineering Supervisor
+ESC00289,A00784,2025-10-04,Scope change,Engineering Supervisor
+ESC00290,A00788,2026-01-27,Status unclear,Program Manager
+ESC00291,A00792,2026-08-06,Blocked dependency,Program Manager
+ESC00292,A00793,2026-07-13,Resource conflict,Program Manager
+ESC00293,A00795,2026-07-11,Resource conflict,Platform Lead

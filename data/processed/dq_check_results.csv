@@ -1,0 +1,28 @@
+as_of_date,table_name,check_name,severity,rows_affected,action,status
+2026-09-30,fact_activity,Exact duplicate rows,WARN,4,removed (kept first copy),WARN
+2026-09-30,fact_activity,State spelling standardised,WARN,1,fixed (trim + capitalise),WARN
+2026-09-30,fact_activity,Conflicting duplicate activity_id,ERROR,0,quarantined,PASS
+2026-09-30,fact_activity,Missing mandatory field,ERROR,5,quarantined,ERROR
+2026-09-30,fact_activity,Invalid state value,ERROR,2,quarantined,ERROR
+2026-09-30,fact_activity,Orphan project_id,ERROR,0,quarantined,PASS
+2026-09-30,fact_activity,Orphan function_id,ERROR,0,quarantined,PASS
+2026-09-30,fact_activity,Orphan activity engineer,ERROR,3,quarantined,ERROR
+2026-09-30,fact_activity,Orphan guide/approver,ERROR,0,quarantined,PASS
+2026-09-30,fact_activity,Start date before created date,ERROR,0,quarantined,PASS
+2026-09-30,fact_activity,Closed date before start date,ERROR,3,quarantined,ERROR
+2026-09-30,fact_activity,Closed without closed date,ERROR,2,quarantined,ERROR
+2026-09-30,fact_activity,In-flight without start date,ERROR,0,quarantined,PASS
+2026-09-30,fact_activity,percent_complete outside 0-100,WARN,4,clipped to 0-100,WARN
+2026-09-30,fact_activity,Deadline before created date,WARN,0,"kept, flagged for owner",PASS
+2026-09-30,fact_activity,Rows received,INFO,0,802 raw rows -> 783 clean,PASS
+2026-09-30,activity_state_history,Parent activity quarantined,INFO,78,excluded,INFO
+2026-09-30,fact_timesheet,Exact duplicate rows,WARN,3,removed (kept first copy),WARN
+2026-09-30,fact_timesheet,Hours not positive,ERROR,4,quarantined,ERROR
+2026-09-30,fact_timesheet,Hours above 60 in a week,ERROR,3,quarantined,ERROR
+2026-09-30,fact_timesheet,Orphan activity_id,ERROR,2,quarantined,ERROR
+2026-09-30,fact_timesheet,Orphan engineer_id,ERROR,0,quarantined,PASS
+2026-09-30,fact_timesheet,Parent activity quarantined,INFO,269,excluded,INFO
+2026-09-30,fact_escalation,Orphan activity_id,ERROR,0,quarantined,PASS
+2026-09-30,fact_escalation,Parent activity quarantined,INFO,5,excluded,INFO
+2026-09-30,fact_activity,State does not match history,WARN,0,"kept, flagged for owner",PASS
+2026-09-30,fact_activity,Week-on-week volume swing > 20%,WARN,0,"previous run 783, this run 783 (+0%)",PASS
